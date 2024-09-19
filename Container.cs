@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace ProjetoGeladeira
 {
-    public class Container
+    public class Container : Armazenamento
     {
         private List<ItemGeladeira> _itens;
 
         public Container()
         {
             _itens = new List<ItemGeladeira>();
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++) 
             {
                 _itens.Add(null);
             }
@@ -42,7 +42,7 @@ namespace ProjetoGeladeira
             }
         }
 
-        public void ImprimirItens(int numeroAndar, int numeroContainer)
+        public override void ImprimirItens(int numeroAndar = -1, int numeroContainer = -1)
         {
             for (int i = 0; i < _itens.Count; i++)
             {
